@@ -1,9 +1,25 @@
 # UIColor-HexRGB
-UIColor category that converts Hex And RGB string values to UIColor.
+UIColor category that converts Hex and RGB color string values to UIColor.
+
+## Supports color string format
+
+- Hex
+	- fff (short, without #)
+	- #fff (short, with #)
+	- 00ff00 (long, without #)
+	- #00ff00 (long, with #)
+- RGB(A)
+	- 99,159,137 (without alpha)
+	- 99,159,137,0.5 (with alpha)
 
 ## Installation
 
-Add `UIColor+HexRGB.h` and `UIColor+HexRGB.h` to your project. 
+- Add `UIColor+HexRGB.h` and `UIColor+HexRGB.h` to your project. 
+- Add `#import "UIColor+HexRGB.h"` where your want to use.
+
+## Requirements
+
+Requires iOS 4.3 and above.
 
 ## Usage
 
@@ -12,18 +28,18 @@ Add `UIColor+HexRGB.h` and `UIColor+HexRGB.h` to your project.
   #import "UIColor+HexRGB.h"
 
   - (void)viewDidLoad {
+  
     [super viewDidLoad];
-    
-    // 2eeea3  
-    self.label1.backgroundColor = [UIColor colorWithHex:self.label1.text];  
-    // #fd482f  
-    self.label2.backgroundColor = [UIColor colorWithHex:self.label2.text alpha:0.5];  
-    // 99,159,137  
-    self.label3.backgroundColor = [UIColor colorWithRGB:self.label3.text];  
-    // 137,99,59,0.5  
-    self.label4.backgroundColor = [UIColor colorWithRGBA:self.label4.text];  
-    // 0f0  
-    self.label5.backgroundColor = [UIColor colorWithHex:self.label5.text];  
+      
+    self.label1.backgroundColor = [UIColor colorWithHex: @"2eeea3"];  
+  
+    self.label2.backgroundColor = [UIColor colorWithHex: @"#fd482f"];  
+
+    self.label3.backgroundColor = [UIColor colorWithRGB: @"99,159,137"];  
+  
+    self.label4.backgroundColor = [UIColor colorWithRGBA: @"137,99,59,0.5"];  
+
+    self.label5.backgroundColor = [UIColor colorWithHex: @"0f0"];  
   }
   
 ```
