@@ -15,7 +15,7 @@ UIColor category that converts Hex and RGB color string values to UIColor.
 ## Installation
 
 - Add `UIColor+HexRGB.h` and `UIColor+HexRGB.h` to your project. 
-- Add `#import "UIColor+HexRGB.h"` where your want to use.
+- Or use CocoaPods: `pod 'UIColor-HexRGB'`.
 
 ## Requirements
 

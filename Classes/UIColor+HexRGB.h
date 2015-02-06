@@ -13,7 +13,7 @@
 /**
  *  Create UIColor with Hex string
  *
- *  @param hex @"#aabbcc" or @"aabbcc"
+ *  @param hex @"#aabbcc", @"aabbcc", @"#abc", or @"abc"
  *
  *  @return UIColor
  */
@@ -22,12 +22,22 @@
 /**
  *  Create UIColor with Hex string and alpha value
  *
- *  @param hex   hex @"#aabbcc" or @"aabbcc"
+ *  @param hex   @"#aabbcc", @"aabbcc", @"#abc", or @"abc"
  *  @param alpha 0.0 ~ 1.0
  *
  *  @return UIColor
  */
 + (UIColor *)colorWithHex:(NSString *)hex alpha:(CGFloat)alpha;
+
+/**
+ *  Create UIColor with Hex number and alpha value
+ *
+ *  @param hexNum 0xaabbcc
+ *  @param alpha  0.0 ~ 1.0
+ *
+ *  @return UIColor
+ */
++ (UIColor *)colorWithHexNum:(unsigned)hexNum alpha:(CGFloat)alpha;
 
 /**
  *  Create UIColor with RGB string

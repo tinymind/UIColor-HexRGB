@@ -28,22 +28,28 @@
     }
     
     if (hexStr.length == 3) {
-        hexStr = [NSString stringWithFormat:@"%@%@%@%@%@%@",
-                     [hexStr substringWithRange:NSMakeRange(0, 1)],[hexStr substringWithRange:NSMakeRange(0, 1)],
-                     [hexStr substringWithRange:NSMakeRange(1, 1)],[hexStr substringWithRange:NSMakeRange(1, 1)],
-                     [hexStr substringWithRange:NSMakeRange(2, 1)],[hexStr substringWithRange:NSMakeRange(2, 1)]];
+        
+        NSString *oneR = [hex substringWithRange:NSMakeRange(0, 1)];
+        NSString *oneG = [hex substringWithRange:NSMakeRange(1, 1)];
+        NSString *oneB = [hex substringWithRange:NSMakeRange(2, 1)];
+        
+        hexStr = [NSString stringWithFormat:@"%@%@%@%@%@%@", oneR, oneR, oneG, oneG, oneB, oneB];
     }
     
     NSScanner *scanner = [NSScanner scannerWithString:hexStr];
     unsigned hexNum;
     if (![scanner scanHexInt: &hexNum]) {
-        return nil;
+        return [UIColor clearColor];;
     }
-    
+    return [self colorWithHexNum:hexNum alpha:alpha];
+}
+
++ (UIColor *)colorWithHexNum:(unsigned)hexNum alpha:(CGFloat)alpha
+{
     NSInteger r = (hexNum >> 16) & 0xFF;
     NSInteger g = (hexNum >> 8) & 0xFF;
     NSInteger b = (hexNum) & 0xFF;
-
+    
     return [[self class] colorWithR:r g:g b:b a:alpha];
 }
 
@@ -62,7 +68,7 @@
     NSInteger r = [list[0] integerValue];
     NSInteger g = [list[1] integerValue];
     NSInteger b = [list[2] integerValue];
-    CGFloat a = [list[3] floatValue];
+    CGFloat   a = [list[3] floatValue];
     
     return [[self class] colorWithR:r g:g b:b a:a];
 }
