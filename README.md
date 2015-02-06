@@ -1,16 +1,18 @@
 # UIColor-HexRGB
 UIColor category that converts Hex and RGB color string values to UIColor.
 
-## Supports color string format
+## Supports color formats
 
-- Hex
+- Hex string
 	- fff (short, without #)
 	- #fff (short, with #)
 	- 00ff00 (long, without #)
 	- #00ff00 (long, with #)
-- RGB(A)
+- RGB(A) string
 	- 99,159,137 (without alpha)
 	- 99,159,137,0.5 (with alpha)
+- Hex integer
+	- 0x00ff00
 
 ## Installation
 
@@ -40,6 +42,8 @@ Requires iOS 4.3 and above.
     self.label4.backgroundColor = [UIColor colorWithRGBA: @"137,99,59,0.5"];  
 
     self.label5.backgroundColor = [UIColor colorWithHex: @"0f0"];  
+    
+    self.label6.backgroundColor = [UIColor colorWithHexNum: 0xfd482f alpha: 0.5];  
   }
   
 ```
