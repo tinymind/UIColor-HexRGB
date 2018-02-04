@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		739B54C32024660000D996AC /* UIColor+HexRGB.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F1F2921A821D0100FF6BD4 /* UIColor+HexRGB.m */; };
 		B1F1F26D1A821CC200FF6BD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F1F26C1A821CC200FF6BD4 /* main.m */; };
 		B1F1F2701A821CC200FF6BD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F1F26F1A821CC200FF6BD4 /* AppDelegate.m */; };
 		B1F1F2731A821CC200FF6BD4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1F1F2721A821CC200FF6BD4 /* ViewController.m */; };
@@ -245,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1F1F2871A821CC200FF6BD4 /* UIColor_HexRGB_DemoTests.m in Sources */,
+				739B54C32024660000D996AC /* UIColor+HexRGB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +429,7 @@
 				B1F1F28C1A821CC200FF6BD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1F1F28D1A821CC200FF6BD4 /* Build configuration list for PBXNativeTarget "UIColor-HexRGB-DemoTests" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +438,7 @@
 				B1F1F28F1A821CC200FF6BD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

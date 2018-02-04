@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "UIColor+HexRGB.h"
 
 @interface UIColor_HexRGB_DemoTests : XCTestCase
 
@@ -25,16 +26,41 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testColorWithHexAndAlpha {
+    UIColor *hexColor = [UIColor colorWithHex:@"#000000" alpha:1];
+    UIColor *testColor = [UIColor colorWithDisplayP3Red:0 green:0 blue:0 alpha:1];
+    
+    XCTAssertEqualObjects(hexColor, testColor);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+
+- (void)testColorWithRGBA {
+    UIColor *RGBColor = [UIColor colorWithRGBA:@"255.255.255.1"];
+    UIColor *testColor = [UIColor clearColor];
+    
+    XCTAssertEqualObjects(RGBColor, testColor);
+}
+
+- (void)testColorWithHexAndAlphaWithoutOctothorp {
+    //Octothorp = #
+    UIColor *hexColor = [UIColor colorWithHex:@"000000" alpha:1];
+    UIColor *testColor = [UIColor colorWithDisplayP3Red:0 green:0 blue:0 alpha:1];
+    
+    XCTAssertEqualObjects(hexColor, testColor);
+}
+
+- (void)testColorWithShortHexAndAlpha {
+    UIColor *hexColor = [UIColor colorWithHex:@"#00" alpha:1];
+    UIColor *testColor = [UIColor colorWithDisplayP3Red:0 green:0 blue:0 alpha:1];
+    
+    XCTAssertEqualObjects(hexColor, testColor);
+}
+
+- (void)testColorWithShortHexAndAlphaWithoutOctothorp {
+    UIColor *hexColor = [UIColor colorWithHex:@"000" alpha:1];
+    UIColor *testColor = [UIColor colorWithDisplayP3Red:0 green:0 blue:0 alpha:1];
+    
+    XCTAssertEqualObjects(hexColor, testColor);
 }
 
 @end
